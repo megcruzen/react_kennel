@@ -3,9 +3,9 @@ export default class EmployeeList extends Component {
     render() {
         // console.log(this.props.employees);
         return (
-            <article>
+            <section className="employees">
                 <h1>Employees</h1>
-                <section className="employees">
+                <div>
                 {
                     this.props.employees.map(employee =>
                         <div key={employee.id}>
@@ -13,8 +13,8 @@ export default class EmployeeList extends Component {
                         </div>
                     )
                 }
-                </section>
-            </article>
+                </div>
+            </section>
         )
     }
 }
