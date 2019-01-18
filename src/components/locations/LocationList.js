@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export default class LocationList extends Component {
     render() {
         return (
-            <article>
+            <section className="locations">
                 <h1>Locations</h1>
-                <section className="locations">
+                <div>
                 {
                     this.props.locations.map(location =>
                         <div key={location.id}>
@@ -16,8 +16,8 @@ export default class LocationList extends Component {
                         </div>
                     )
                 }
-                </section>
-            </article>
+                </div>
+            </section>
         );
     }
 }
