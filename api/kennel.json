@@ -12,7 +12,9 @@
     "animals": [
         { "id": 1, "name": "Spike", "species": "Dog", "breed": "Yorkie" },
         { "id": 2, "name": "Arthur", "species": "Cat", "breed": "Maine Coon" },
-        { "id": 3, "name": "Mahoney", "species": "Cat", "breed": "Tortie" }
+        { "id": 3, "name": "Mahoney", "species": "Cat", "breed": "Tortie" },
+        { "id": 4, "name": "Kudzu", "species": "Cat", "breed": "DSH" },
+        { "id": 5, "name": "Brownie", "species": "Dog", "breed": "German Shepherd" }
     ],
     "owners": [
         { "id": 1, "name": "Ryan Tanay", "phone": "555-555-5555" },

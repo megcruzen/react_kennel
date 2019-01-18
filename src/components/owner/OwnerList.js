@@ -8,7 +8,7 @@ export default class OwnerList extends Component {
                 {
                     this.props.owners.map(owner =>
                         <div key={owner.id}>
-                            {owner.name}<br />
+                            {owner.name} (<a href="#" onClick={() => this.props.deleteOwner(owner.id)}>Delete</a>)<br />
                             {owner.phone}<br /><br />
                         </div>
                     )
