@@ -20,7 +20,7 @@ export default class ApplicationViews extends Component {
     componentDidMount() {
         const newState = {}
 
-        fetch("http://localhost:5002/animals")
+        fetch("http://localhost:5002/animals?_expand=owner")
             .then(r => r.json())
             .then(animalData => newState.animals = animalData)
             .then(() => fetch("http://localhost:5002/employees")

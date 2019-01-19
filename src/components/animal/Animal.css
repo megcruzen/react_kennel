@@ -25,6 +25,6 @@
     font-size: 0.7em;
 }
 
-.breed {
+.breed, .owner {
     font-size: 12px;
 }
