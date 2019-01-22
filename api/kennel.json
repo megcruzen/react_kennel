@@ -45,6 +45,13 @@
       "ownerId": 3
     },
     {
+      "id": 3,
+      "name": "Brownie",
+      "species": "Dog",
+      "breed": "German Shepherd",
+      "ownerId": 4
+    },
+    {
       "id": 4,
       "name": "Kudzu",
       "species": "Cat",
@@ -53,10 +60,10 @@
     },
     {
       "id": 5,
-      "name": "Brownie",
-      "species": "Dog",
-      "breed": "German Shepherd",
-      "ownerId": 5
+      "name": "Test",
+      "species": "Cat",
+      "breed": "DSH",
+      "ownerId": 3
     }
   ],
   "owners": [

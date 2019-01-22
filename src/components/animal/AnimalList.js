@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import dog from "./DogIcon.png"
 import "./Animal.css"
-import OwnerList from '../owner/OwnerList';
+// import OwnerList from '../owner/OwnerList';
 
 export default class AnimalList extends Component {
     render () {
