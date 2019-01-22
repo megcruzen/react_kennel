@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import "./Animal.css"
 import dog from "./DogIcon.png"
-
-
 export default class AnimalDetail extends Component {
     render() {
         console.log(this.props);
@@ -34,6 +32,7 @@ export default class AnimalDetail extends Component {
                         </h5>
                     </div>
                 </div>
+                <div><a href="#" onClick={() => this.props.history.push("/animals")} className="card-link">Go Back</a></div>
             </section>
         )
     }
