@@ -51,6 +51,36 @@ class ApplicationViews extends Component {
         employees: []
     }
 
+    componentDidMount() {
+        const newState = {}
+
+            fetch("http://localhost:5002/animals?_expand=owner")
+                .then(r => r.json())
+                .then(animalData => newState.animals = animalData)
+                .then(() => fetch("http://localhost:5002/employees")
+                .then(r => r.json()))
+                .then(employeeData => newState.employees = employeeData)
+                .then(() => fetch("http://localhost:5002/locations")
+                .then(r => r.json()))
+                .then(locationData => newState.locations = locationData)
+                .then(() => fetch("http://localhost:5002/owners")
+                .then(r => r.json()))
+                .then(ownerData => newState.owners = ownerData)
+                .then(() => this.setState(newState))
+                // .then (animalData => this.setState({animals: animalData})) - use if only using one fetch call
+        }
+
+    deleteAnimal = id => {
+        return fetch(`http://localhost:5002/animals/${id}`, {
+            method: "DELETE"
+        })
+        .then(r => r.json())
+        .then(() => fetch(`http://localhost:5002/animals`))
+        .then(r => r.json())
+        .then(animalData => this.setState({animals: animalData})
+      )
+    }
+
     render() {
         return (
             <React.Fragment>
