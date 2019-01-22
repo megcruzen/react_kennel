@@ -22,7 +22,6 @@ export default class ApplicationViews extends Component {
     }
 
     componentDidMount() {
-        const newState = {}
 
         AnimalManager.getAll()
         .then(allAnimals => {
@@ -47,29 +46,26 @@ export default class ApplicationViews extends Component {
 
     deleteAnimal = (id) => {
         return AnimalManager.removeAndList(id)
-        .then(animals => this.setState({ animals: animals }))
+        // .then(() => AnimalManager.getAll())
+        .then(animals =>
+            this.setState({ animals: animals })
+        )
     }
 
-    deleteEmployee = id => {
-        return fetch(`http://localhost:5002/employees/${id}`, {
-            method: "DELETE"
-        })
-        .then(r => r.json())
-        .then(() => fetch(`http://localhost:5002/employees`))
-        .then(r => r.json())
-        .then(employeeData => this.setState({employees: employeeData})
-      )
+    deleteEmployee = (id) => {
+        return EmployeeManager.removeAndList(id)
+        .then(() => EmployeeManager.getAll())
+        .then(employees =>
+            this.setState({ employees: employees })
+        )
     }
 
-    deleteOwner = id => {
-        return fetch(`http://localhost:5002/owners/${id}`, {
-            method: "DELETE"
-        })
-        .then(r => r.json())
-        .then(() => fetch(`http://localhost:5002/owners`))
-        .then(r => r.json())
-        .then(ownerData => this.setState({owners: ownerData})
-      )
+    deleteOwner = (id) => {
+        return OwnerManager.removeAndList(id)
+        .then(() => OwnerManager.getAll())
+        .then(owners =>
+            this.setState({ owners: owners })
+        )
     }
 
     render() {
@@ -79,7 +75,7 @@ export default class ApplicationViews extends Component {
                     return <LocationList locations={this.state.locations} />
                 }} />
                 <Route exact path="/animals" render={(props) => {
-                    return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} owners={this.state.owners} ownerspets={this.state.ownerspets} />
+                    return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} owners={this.state.owners} />
                 }} />
                 <Route exact path="/employees" render={(props) => {
                     return <EmployeeList deleteEmployee={this.deleteEmployee} employees={this.state.employees} />

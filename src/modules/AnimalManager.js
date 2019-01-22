@@ -14,6 +14,7 @@ export default {
         return fetch(`${remoteURL}/animals/${id}`, {
             method: "DELETE"
         })
+        .then(() => this.getAll())
     }
 
 }
