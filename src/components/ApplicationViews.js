@@ -14,6 +14,8 @@ import LocationDetail from './location/LocationDetail'
 
 import EmployeeManager from "../modules/EmployeeManager"
 import EmployeeList from './employee/EmployeeList'
+// import EmployeeDetail from './employee/EmployeeDetail'
+import EmployeeForm from './employee/EmployeeForm'
 
 import OwnerManager from "../modules/OwnerManager"
 import OwnerList from './owner/OwnerList'
@@ -76,6 +78,13 @@ export default class ApplicationViews extends Component {
         )
     }
 
+    addEmployee = (employee) => EmployeeManager.post(employee)
+    .then(() => EmployeeManager.getAll())
+    .then(allEmployees => this.setState({
+        employees: allEmployees
+        })
+    )
+
     deleteOwner = (id) => {
         return OwnerManager.removeAndList(id)
         .then(() => OwnerManager.getAll())
@@ -99,17 +108,20 @@ export default class ApplicationViews extends Component {
                 {/* <Route exact path="/animals" render={(props) => {
                     return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} />
                 }} /> */}
+
                 <Route exact path="/animals" render={(props) => {
                     return <AnimalList {...props}
                                 deleteAnimal={this.deleteAnimal}
                                 animals={this.state.animals} />
                 }} />
+
                 <Route path="/animals/:animalId(\d+)" render={(props) => {
                     return <AnimalDetail {...props}
                                 deleteAnimal={this.deleteAnimal}
                                 animals={this.state.animals}
                                 owners={this.state.owners} />
                 }} />
+
                 {/* Our shiny new route. We pass employees to the AnimalForm so a dropdown can be populated */}
                 <Route path="/animals/new" render={(props) => {
                     return <AnimalForm {...props}
@@ -118,9 +130,14 @@ export default class ApplicationViews extends Component {
                 }} />
 
                 <Route exact path="/employees" render={(props) => {
-                    return <EmployeeList
+                    return <EmployeeList {...props}
                                 deleteEmployee={this.deleteEmployee}
                                 employees={this.state.employees} />
+                }} />
+
+                <Route path="/employees/new" render={(props) => {
+                    return <EmployeeForm {...props}
+                                addEmployee={this.addEmployee} />
                 }} />
 
                 <Route exact path="/owners" render={(props) => {
@@ -128,6 +145,7 @@ export default class ApplicationViews extends Component {
                                 deleteOwner={this.deleteOwner}
                                 owners={this.state.owners} />
                 }} />
+
                 <Route path="/owners/:ownerId(\d+)" render={(props) => {
                     return <OwnerDetail {...props}
                                 deleteOwner={this.deleteOwner}

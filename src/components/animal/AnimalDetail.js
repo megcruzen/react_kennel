@@ -23,7 +23,7 @@ export default class AnimalDetail extends Component {
                             <br />
                             <span className="breed">{animal.breed}</span>
                             <br />
-                            <span className="owner">Manager:<br />{employeeName}</span>
+                            <span className="owner">Caretaker:<br />{employeeName}</span>
                             {/* <span className="owner">Owner:<br />{ownerName}</span> */}
                             <a href="#"
                                 onClick={() => this.props.deleteAnimal(animal.id)

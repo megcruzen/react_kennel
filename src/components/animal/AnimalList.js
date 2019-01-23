@@ -27,7 +27,7 @@ export default class AnimalList extends Component {
                                     <br />
                                     <span className="breed">{animal.breed}</span>
                                     <br />
-                                    <span className="owner">Manager:<br />{animal.employee.name}</span>
+                                    <span className="owner">Caretaker:<br />{animal.employee.name}</span>
                                     {/* <span className="owner">Owner:<br />{animal.owner.name}</span> */}
                                     <Link className="nav-link" to={`/animals/${animal.id}`}>Details</Link>
                                     <a href="#"
