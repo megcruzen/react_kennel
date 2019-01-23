@@ -10,7 +10,7 @@ export default class AnimalDetail extends Component {
             collection that was passed down from ApplicationViews
         */
         const animal = this.props.animals.find(a => a.id === parseInt(this.props.match.params.animalId)) || {}
-        const ownerName = animal.owner ? animal.owner.name : ""
+        const employeeName = animal.employee ? animal.employee.name : ""
         console.log(animal);
 
         return (
@@ -23,7 +23,8 @@ export default class AnimalDetail extends Component {
                             <br />
                             <span className="breed">{animal.breed}</span>
                             <br />
-                            <span className="owner">Owner:<br />{ownerName}</span>
+                            <span className="owner">Manager:<br />{employeeName}</span>
+                            {/* <span className="owner">Owner:<br />{ownerName}</span> */}
                             <a href="#"
                                 onClick={() => this.props.deleteAnimal(animal.id)
                                 .then(() => this.props.history.push("/animals"))
