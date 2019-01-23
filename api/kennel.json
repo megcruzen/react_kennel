@@ -35,35 +35,35 @@
       "name": "Spike",
       "species": "Dog",
       "breed": "Yorkie",
-      "ownerId": 1
+      "employeeId": 2
     },
     {
       "id": 2,
       "name": "Arthur",
       "species": "Cat",
       "breed": "Maine Coon",
-      "ownerId": 3
+      "employeeId": 3
     },
     {
       "id": 3,
       "name": "Brownie",
       "species": "Dog",
       "breed": "German Shepherd",
-      "ownerId": 4
+      "employeeId": 1
     },
     {
       "id": 4,
       "name": "Kudzu",
       "species": "Cat",
       "breed": "DSH",
-      "ownerId": 2
+      "employeeId": 4
     },
     {
       "id": 5,
       "name": "Test",
       "species": "Cat",
       "breed": "DSH",
-      "ownerId": 2
+      "employeeId": 3
     }
   ],
   "owners": [
