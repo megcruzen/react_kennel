@@ -20,6 +20,7 @@ import EmployeeForm from './employee/EmployeeForm'
 import OwnerManager from "../modules/OwnerManager"
 import OwnerList from './owner/OwnerList'
 import OwnerDetail from './owner/OwnerDetail'
+import OwnerForm from "./owner/OwnerForm"
 
 export default class ApplicationViews extends Component {
 
@@ -95,6 +96,13 @@ export default class ApplicationViews extends Component {
         )
     }
 
+    addOwner = (owner) => OwnerManager.post(owner)
+    .then(() => OwnerManager.getAll())
+    .then(allOwners => this.setState({
+        owners: allOwners
+        })
+    )
+
     render() {
         return (
             <React.Fragment>
@@ -161,6 +169,11 @@ export default class ApplicationViews extends Component {
                     } else {
                         return <Redirect to="/login" />
                     }
+                }} />
+
+                <Route path="/owners/new" render={(props) => {
+                    return <OwnerForm {...props}
+                                addOwner={this.addOwner} />
                 }} />
 
                 <Route path="/owners/:ownerId(\d+)" render={(props) => {

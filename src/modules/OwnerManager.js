@@ -15,6 +15,17 @@ export default {
             method: "DELETE"
         })
         .then(() => this.getAll())
-    }
+    },
+
+    post(newOwner) {
+        return fetch(`${remoteURL}/owners`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newOwner)
+        })
+        .then(data => data.json())
+      }
 
 }
