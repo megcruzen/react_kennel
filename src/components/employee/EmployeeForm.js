@@ -46,6 +46,7 @@ export default class EmployeeForm extends Component {
                     </div>
                     <button type="submit" onClick={this.constructNewEmployee} className="btn btn-primary">Submit</button>
                 </form>
+                <div><a href="#" onClick={() => this.props.history.push("/animals")} className="card-link">Go Back</a></div>
             </React.Fragment>
         )
     }

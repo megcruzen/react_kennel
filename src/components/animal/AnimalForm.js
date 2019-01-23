@@ -24,8 +24,17 @@ export default class AnimalForm extends Component {
      */
     constructNewAnimal = evt => {
         evt.preventDefault()
+        if (this.state.animalName === "") {
+            window.alert("Please enter an animal name.")
+        }
+        if (this.state.species === "") {
+            window.alert("Please enter a species.")
+        }
+        if (this.state.breed === "") {
+            window.alert("Please enter a breed.")
+        }
         if (this.state.employee === "") {      // if employee is empty, alert to select
-            window.alert("Please select a caretaker")
+            window.alert("Please select a caretaker.")
         } else {
             const animal = {
                 name: this.state.animalName,
@@ -73,12 +82,13 @@ export default class AnimalForm extends Component {
                                 onChange={this.handleFieldChange}>
                             <option value="">Select an employee</option>
                         {
-                            this.props.employees.map(e => <option key={e.id} id={e.id}>{e.name}</option>)
+                            this.props.employees.map(employee => <option key={employee.id} id={employee.id}>{employee.name}</option>)
                         }
                         </select>
                     </div>
                     <button type="submit" onClick={this.constructNewAnimal} className="btn btn-primary">Submit</button>
                 </form>
+                <div><a href="#" onClick={() => this.props.history.push("/animals")} className="card-link">Go Back</a></div>
             </React.Fragment>
         )
     }
