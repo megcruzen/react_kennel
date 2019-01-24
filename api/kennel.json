@@ -15,10 +15,6 @@
     {
       "id": 4,
       "name": "Blaise Roberts"
-    },
-    {
-      "name": "John Doe",
-      "id": 5
     }
   ],
   "locations": [
@@ -95,6 +91,11 @@
       "id": 5,
       "name": "Fletcher Bangs",
       "phone": "505-505-5050"
+    },
+    {
+      "name": "Joe Blow",
+      "phone": "555-555-5555",
+      "id": 6
     }
   ],
   "ownersAndPets": [

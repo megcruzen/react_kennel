@@ -32,7 +32,7 @@ export default class AnimalList extends Component {
                                     <Link className="nav-link" to={`/animals/${animal.id}`}>Details</Link>
                                     <a href="#"
                                         onClick={() => this.props.deleteAnimal(animal.id)}
-                                        className="card-link">Delete</a>
+                                        className="delete">Delete</a>
                                 </h5>
                             </div>
                         </div>

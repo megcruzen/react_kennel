@@ -1,10 +1,10 @@
-.animalButton {
+.ownerButton {
     display: flex;
     justify-content: space-evenly;
     margin: 0 0 10px 0;
 }
 
-.animals {
+.owners {
     display: flex;
     justify-content: space-evenly;
 }
@@ -31,11 +31,11 @@
     font-size: 0.7em;
 }
 
-.breed, .owner {
+.phone {
     font-size: 12px;
 }
 
-.animals a {
+.owners a {
     font-size: 12px;
 }
 
