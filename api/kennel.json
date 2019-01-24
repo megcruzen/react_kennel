@@ -19,11 +19,6 @@
       "id": 4,
       "name": "Blaise Roberts",
       "locationId": 1
-    },
-    {
-      "name": "Joe Smith",
-      "locationId": 1,
-      "id": 5
     }
   ],
   "locations": [

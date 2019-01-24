@@ -168,6 +168,7 @@ export default class ApplicationViews extends Component {
                         return <EmployeeList {...props}
                                     deleteEmployee={this.deleteEmployee}
                                     employees={this.state.employees}
+                                    animals={this.state.animals}
                                     locations={this.state.locations} />
                     } else {
                         return <Redirect to="/login" />
