@@ -63,7 +63,14 @@
       "name": "Test",
       "species": "Cat",
       "breed": "DSH",
-      "employeeId": 3
+      "employeeId": 2
+    },
+    {
+      "name": "Juniper",
+      "species": "Cat",
+      "breed": "DSH",
+      "employeeId": 1,
+      "id": 6
     }
   ],
   "owners": [
@@ -91,11 +98,6 @@
       "id": 5,
       "name": "Fletcher Bangs",
       "phone": "505-505-5050"
-    },
-    {
-      "name": "Joe Blow",
-      "phone": "555-555-5555",
-      "id": 6
     }
   ],
   "ownersAndPets": [
