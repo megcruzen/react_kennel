@@ -2,6 +2,7 @@
 import { Route, Redirect } from "react-router-dom"
 import React, { Component } from "react"
 import Login from './authentication/Login'
+import SearchResults from "./search/SearchResults"
 
 import AnimalManager from "../modules/AnimalManager"
 import AnimalList from './animal/AnimalList'
@@ -115,6 +116,10 @@ export default class ApplicationViews extends Component {
         return (
             <React.Fragment>
                 <Route path="/login" component={Login} />
+
+                <Route path="/search" render={(props) => {
+                    return <SearchResults {...this.props} />
+                }} />
 
                 <Route path="/locations/:locationId(\d+)" render={(props) => {
                     return <LocationDetail {...props}

@@ -11,6 +11,10 @@ export default class AnimalEditForm extends Component {
         employee: this.props.location.state.employee
     }
 
+    consoleLog() {
+        console.log(this.props.location.state.species);
+    }
+
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -54,6 +58,7 @@ export default class AnimalEditForm extends Component {
     render() {
         return (
             <React.Fragment>
+                {this.consoleLog()}
                 <form className="animalForm">
                     <div className="form-group">
                         <label htmlFor="animalName">Animal Name</label>

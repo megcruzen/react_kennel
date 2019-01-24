@@ -46,3 +46,7 @@
 .delete:hover {
     color: red;
 }
+
+.employees .caretaker {
+    display: none;
+}

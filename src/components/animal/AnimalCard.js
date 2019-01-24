@@ -14,7 +14,7 @@ export default class AnimalCard extends Component {
                         <br />
                         <span className="breed">{this.props.animal.breed}</span>
                         <br />
-                        <span className="owner">Caretaker:<br />{this.props.animal.employee.name}</span>
+                        <span className="caretaker">Caretaker:<br />{this.props.animal.employee.name}</span>
                         {/* <span className="owner">Owner:<br />{animal.owner.name}</span> */}
                         <Link className="nav-link" to={`/animals/${this.props.animal.id}`}>Details</Link>
                         <a href="#"
