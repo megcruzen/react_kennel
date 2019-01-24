@@ -74,7 +74,7 @@ export default class ApplicationViews extends Component {
         })
     )
 
-    editAnimal = (animalId, animalToEdit) => AnimalManager.edit(animalId, animalToEdit)
+    editAnimal = (animalId) => AnimalManager.edit(animalId)
     .then(() => AnimalManager.getAll())
     .then(allAnimals => this.setState({
         animals: allAnimals
@@ -167,7 +167,8 @@ export default class ApplicationViews extends Component {
                     if (this.isAuthenticated()) {
                         return <EmployeeList {...props}
                                     deleteEmployee={this.deleteEmployee}
-                                    employees={this.state.employees} />
+                                    employees={this.state.employees}
+                                    locations={this.state.locations} />
                     } else {
                         return <Redirect to="/login" />
                     }
@@ -175,7 +176,8 @@ export default class ApplicationViews extends Component {
 
                 <Route path="/employees/new" render={(props) => {
                     return <EmployeeForm {...props}
-                                addEmployee={this.addEmployee} />
+                                addEmployee={this.addEmployee}
+                                locations={this.state.locations} />
                 }} />
 
                 <Route exact path="/owners" render={props => {
