@@ -24,7 +24,9 @@ export default class EmployeeForm extends Component {
         evt.preventDefault();
 
         const employee = {
-            name: this.state.employee
+            name: this.state.employee,
+            locationId: this.props.locations.find(location =>  // find location name and grab its ID
+                location.name === this.state.location).id
         }
 
         // Create the employee and then redirect user to employee list
@@ -43,6 +45,16 @@ export default class EmployeeForm extends Component {
                                onChange={this.handleFieldChange}
                                id="employee"
                                placeholder="Employee name" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="location">Assign to caretaker</label>
+                        <select defaultValue="" name="location" id="location"
+                                onChange={this.handleFieldChange}>
+                            <option value="">Select a location</option>
+                        {
+                            this.props.locations.map(location => <option key={location.id} id={location.id}>{location.name}</option>)
+                        }
+                        </select>
                     </div>
                     <button type="submit" onClick={this.constructNewEmployee} className="btn btn-primary">Submit</button>
                 </form>

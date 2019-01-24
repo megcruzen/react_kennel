@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Link } from 'react-router-dom'
 import "./Animal.css"
 import dog from "./DogIcon.png"
 export default class AnimalDetail extends Component {
@@ -27,13 +28,22 @@ export default class AnimalDetail extends Component {
                             <br />
                             {/* <span className="owner">Owner:<br />{ownerName}</span> */}
                             <div className="animalEditButton">
+                            <Link to={{pathname:"/animals/edit/", state:{id: animal.id, name: animal.name, breed: animal.breed, employee: animal.employeeId}}}>
+                                <button type="button"
+                                        className="btn btn-success">
+                                    Edit Animal
+                                </button>
+                                </Link>
+                            </div>
+                            {/* <div className="animalEditButton">
                                 <button type="button"
                                         className="btn btn-success"
                                         onClick={() => { this.props.editAnimal(animal.id) }
+                                        // this.props.history.push(`/animals/edit/${animal.id}`)}
                                         }>
                                     Edit
                                 </button>
-                            </div>
+                            </div> */}
                             <a href="#"
                                 onClick={() => this.props.deleteAnimal(animal.id)
                                 .then(() => this.props.history.push("/animals"))

@@ -1,15 +1,15 @@
-.animalButton {
+.employeeButton {
     display: flex;
     justify-content: space-evenly;
     margin: 0 0 10px 0;
 }
 
-.animals {
+.employees {
     display: flex;
     justify-content: space-evenly;
 }
 
-.icon--dog {
+.icon--employee {
     width: 50px;
     height: 50px;
 }
@@ -31,11 +31,11 @@
     font-size: 0.7em;
 }
 
-.breed, .owner, .caretaker {
+.location {
     font-size: 12px;
 }
 
-.animals a {
+.employees a {
     font-size: 12px;
 }
 
@@ -45,4 +45,8 @@
 
 .delete:hover {
     color: red;
+}
+
+.employees .caretaker {
+    display: none;
 }
