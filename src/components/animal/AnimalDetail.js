@@ -3,7 +3,7 @@ import "./Animal.css"
 import dog from "./DogIcon.png"
 export default class AnimalDetail extends Component {
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         /*
             Using the route parameter, find the animal that the
             user clicked on by looking at the `this.props.animals`
@@ -11,7 +11,7 @@ export default class AnimalDetail extends Component {
         */
         const animal = this.props.animals.find(a => a.id === parseInt(this.props.match.params.animalId)) || {}
         const employeeName = animal.employee ? animal.employee.name : ""
-        console.log(animal);
+        // console.log(animal);
 
         return (
             <section className="animal">
@@ -24,7 +24,16 @@ export default class AnimalDetail extends Component {
                             <span className="breed">{animal.breed}</span>
                             <br />
                             <span className="owner">Caretaker:<br />{employeeName}</span>
+                            <br />
                             {/* <span className="owner">Owner:<br />{ownerName}</span> */}
+                            <div className="animalEditButton">
+                                <button type="button"
+                                        className="btn btn-success"
+                                        onClick={() => { this.props.editAnimal(animal.id) }
+                                        }>
+                                    Edit
+                                </button>
+                            </div>
                             <a href="#"
                                 onClick={() => this.props.deleteAnimal(animal.id)
                                 .then(() => this.props.history.push("/animals"))

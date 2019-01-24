@@ -7,6 +7,7 @@ import AnimalManager from "../modules/AnimalManager"
 import AnimalList from './animal/AnimalList'
 import AnimalDetail from './animal/AnimalDetail'
 import AnimalForm from './animal/AnimalForm'
+import AnimalEditForm from './animal/AnimalEditForm'
 
 import LocationManager from "../modules/LocationManager"
 import LocationList from './location/LocationList'
@@ -67,6 +68,13 @@ export default class ApplicationViews extends Component {
     }
 
     addAnimal = (animal) => AnimalManager.post(animal)
+    .then(() => AnimalManager.getAll())
+    .then(allAnimals => this.setState({
+        animals: allAnimals
+        })
+    )
+
+    editAnimal = (animalId, animalToEdit) => AnimalManager.edit(animalId, animalToEdit)
     .then(() => AnimalManager.getAll())
     .then(allAnimals => this.setState({
         animals: allAnimals
@@ -135,7 +143,9 @@ export default class ApplicationViews extends Component {
                 <Route path="/animals/:animalId(\d+)" render={(props) => {
                     return <AnimalDetail {...props}
                                 deleteAnimal={this.deleteAnimal}
+                                editAnimal={this.editAnimal}
                                 animals={this.state.animals}
+                                employees={this.state.employees}
                                 owners={this.state.owners} />
                 }} />
 
@@ -143,6 +153,13 @@ export default class ApplicationViews extends Component {
                 <Route path="/animals/new" render={(props) => {
                     return <AnimalForm {...props}
                                 addAnimal={this.addAnimal}
+                                employees={this.state.employees} />
+                }} />
+
+                <Route path="/animals/edit" render={(props) => {
+                    return <AnimalEditForm {...props}
+                                animals={this.state.animals}
+                                editAnimal={this.editAnimal}
                                 employees={this.state.employees} />
                 }} />
 
