@@ -1,0 +1,52 @@
+/* .animalButton {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 0 10px 0;
+} */
+
+.locations {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.card {
+    width: 10rem;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card-link {
+    margin: 12px 0 0 0;
+    font-size: 0.7em;
+}
+
+/* .breed, .owner, .caretaker {
+    font-size: 12px;
+} */
+
+.locations a {
+    font-size: 12px;
+}
+
+.delete {
+    color: red;
+}
+
+.delete:hover {
+    color: red;
+}
+
+.locations .caretaker, .locations .location {
+    display: none;
+}
+
+.locations .animals--caretaker, h6 {
+    display: none;
+}
