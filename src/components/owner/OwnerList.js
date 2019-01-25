@@ -24,6 +24,10 @@ export default class OwnerList extends Component {
                                 <br />
                                 <span className="phone">{owner.phone}</span>
                                 <br />
+                                <span className="pets"><strong>Pets:</strong></span>
+                                {owner.animals.map(animal =>
+                                    <span className="pets">{animal.name}<br /></span>
+                                    )}
                                 <Link className="nav-link" to={`/owners/${owner.id}`}>Details</Link>
                                 <a href="#" className="delete" onClick={() => this.props.deleteOwner(owner.id)}>Delete</a>
                                 <br /><br />

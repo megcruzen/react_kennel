@@ -66,21 +66,21 @@ export default class AnimalEditForm extends Component {
                                className="form-control"
                                onChange={this.handleFieldChange}
                                id="animalName"
-                               placeholder={`${this.state.animalName}`} />
+                               value={`${this.state.animalName}`} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="species">Species</label>
                         <input type="text" required
                                className="form-control"
                                onChange={this.handleFieldChange}
-                               id="species" placeholder={`${this.state.species}`} />
+                               id="species" value={`${this.state.species}`} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="breed">Breed</label>
                         <input type="text" required
                                className="form-control"
                                onChange={this.handleFieldChange}
-                               id="breed" placeholder={`${this.state.breed}`} />
+                               id="breed" value={`${this.state.breed}`} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="employee">Assign to caretaker</label>
