@@ -3,11 +3,11 @@ const remoteURL = "http://localhost:5002"
 export default {
 
     get(id) {
-        return fetch(`${remoteURL}/owners/${id}`).then(e => e.json())
+        return fetch(`${remoteURL}/owners/${id}`).then(response => response.json())
     },
 
     getAll() {
-        return fetch(`${remoteURL}/owners`).then(e => e.json())
+        return fetch(`${remoteURL}/owners?_embed=animals`).then(response => response.json())
     },
 
     removeAndList(id) {

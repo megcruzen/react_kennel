@@ -157,6 +157,7 @@ export default class ApplicationViews extends Component {
                 {/* We pass employees to the AnimalForm so a dropdown can be populated */}
                 <Route path="/animals/new" render={(props) => {
                     return <AnimalForm {...props}
+                                animals={this.state.animals}
                                 addAnimal={this.addAnimal}
                                 employees={this.state.employees} />
                 }} />
