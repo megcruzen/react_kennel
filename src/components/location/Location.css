@@ -47,6 +47,6 @@
     display: none;
 }
 
-.animals--caretaker a.delete {
+.locations .animals--caretaker, h6 {
     display: none;
 }

@@ -14,8 +14,9 @@ export default class AnimalCard extends Component {
                         <br />
                         <span className="breed">{this.props.animal.breed}</span>
                         <br />
+                        <span className="owner">Owner:<br />{this.props.animal.owner.name}</span>
+                        <br />
                         <span className="caretaker">Caretaker:<br />{this.props.animal.employee.name}</span>
-                        {/* <span className="owner">Owner:<br />{animal.owner.name}</span> */}
                         <Link className="nav-link" to={`/animals/${this.props.animal.id}`}>Details</Link>
                         <a href="#"
                             onClick={() => this.props.deleteAnimal(this.props.animal.id)}

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import "./Location.css"
+import EmployeeCard from "../employee/EmployeeCard"
 
 export default class LocationDetail extends Component {
     render() {
@@ -9,9 +11,16 @@ export default class LocationDetail extends Component {
             <section className="location">
                 <div key={location.id}>
                     <h1>{location.name}</h1>
-                    <br />
                     {location.address}
                     <br /><br />
+                    <h3>Employees</h3>
+                    <div>
+                        {
+                            this.props.employees
+                                .filter(employee => employee.locationId === location.id)
+                                .map(employee => <EmployeeCard key={employee.id} employee={employee} {...this.props} />)
+                        }
+                        </div>
                     <a href="#" onClick={() => this.props.history.push("/")} className="card-link">Go Back</a>
                 </div>
             </section>

@@ -8,7 +8,7 @@ export default {
 
     getAll() {
         // return fetch(`${remoteURL}/animals?_expand=owner`).then(data => data.json())
-        return fetch(`${remoteURL}/animals?_expand=employee`).then(data => data.json())
+        return fetch(`${remoteURL}/animals?_expand=employee&_expand=owner`).then(data => data.json())
     },
 
     removeAndList(id) {

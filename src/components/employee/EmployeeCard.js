@@ -18,7 +18,7 @@ export default class EmployeeCard extends Component {
                         <br />
                         <a href="#"
                         onClick={() => this.props.deleteEmployee(this.props.employee.id)}
-                        className="card-link">Delete</a>
+                        className="delete">Delete</a>
                     </h5>
 
                     <h6 className="card-subtitle mb-2 text-muted">Caretaker For</h6>

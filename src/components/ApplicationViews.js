@@ -123,7 +123,11 @@ export default class ApplicationViews extends Component {
 
                 <Route path="/locations/:locationId(\d+)" render={(props) => {
                     return <LocationDetail {...props}
-                                locations={this.state.locations} />
+                                locations={this.state.locations}
+                                employees={this.state.employees}
+                                deleteEmployee={this.deleteEmployee}
+                                animals={this.state.animals}
+                                deleteAnimal={this.deleteAnimal} />
                 }} />
 
                 <Route exact path="/" render={props => {
